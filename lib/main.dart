@@ -19,7 +19,6 @@ class ResumeApp extends StatelessWidget {
     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/education',
       routes: {
         '/': (context) => const SplashScreen(),
         '/builder': (context) => const builder(),

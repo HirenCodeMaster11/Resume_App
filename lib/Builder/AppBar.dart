@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:resume_app/Builder/Components/title.dart';
+import 'package:resume_app/Builder/AppBarTitle.dart';
 
 AppBar appBar(double height, double width) {
   return AppBar(
