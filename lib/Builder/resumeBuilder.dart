@@ -1,16 +1,18 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:resume_app/utils/global.dart';
 import 'About.dart';
-import 'AppBar.dart';
+import 'AppBarTitle.dart';
 import 'Certificate.dart';
 import 'Education.dart';
 import 'Experience.dart';
+import 'Language.dart';
 import 'Personal.dart';
 import 'Project.dart';
 import 'Skill.dart';
+import 'Social.dart';
 
 GlobalKey<FormState> formKey = GlobalKey();
 
@@ -34,7 +36,75 @@ class _builderState extends State<builder> {
     return DefaultTabController(
       length: 9,
       child: Scaffold(
-        appBar: appBar(height, width),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          systemOverlayStyle:
+          SystemUiOverlayStyle(statusBarColor: Color(0xff006F66)),
+          backgroundColor: const Color(0xff009788),
+          toolbarHeight: height * 0.085,
+          title: TITLE(height),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/generate');
+                },
+                child: Container(
+                  margin: const EdgeInsets.fromLTRB(0, 9, 0, 0),
+                  alignment: Alignment.center,
+                  height: height * 0.045,
+                  width: width * 0.36,
+                  decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 1,
+                          spreadRadius: 0.5,
+                          offset: Offset(0, 3))
+                    ],
+                    color: const Color(0xff4CB6AC),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Text(
+                    'Generate Resume',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: height * 0.02,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+            ),
+          ],
+          bottom: TabBar(
+            indicatorColor: Colors.blue,
+            unselectedLabelStyle: TextStyle(
+              fontSize: height * 0.0238,
+              fontWeight: FontWeight.w500,
+              color: const Color(0xffA1DDD9),
+            ),
+            automaticIndicatorColorAdjustment: false,
+            labelStyle: TextStyle(
+              fontSize: height * 0.0238,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
+            tabAlignment: TabAlignment.start,
+            isScrollable: true,
+            tabs: const [
+              Tab(text: 'Personal'),
+              Tab(text: 'Education'),
+              Tab(text: 'Skills'),
+              Tab(text: 'About'),
+              Tab(text: 'Experience'),
+              Tab(text: 'Projects'),
+              Tab(text: 'Certifications'),
+              Tab(text: 'Languages'),
+              Tab(text: 'Socials'),
+            ],
+          ),
+        ),
         body: TabBarView(
           children: [
             //TODO - Personal
@@ -52,87 +122,9 @@ class _builderState extends State<builder> {
             //TODO - Certification
             Certification(),
             //TODO - Language
-            Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12,right: 12,top: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: height*0.06,
-                      width: width*1,
-                      decoration: BoxDecoration(
-                        color: Color(0xffE0E0E0),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: height*0.014),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            DropdownButton<String>(
-                              style: TextStyle(fontSize: 20,color: Colors.black),
-                              value: selectedLanguage,
-                              items: [
-                                DropdownMenuItem(
-                                  child: Text('English'),
-                                  value: 'English',
-                                ),
-                                DropdownMenuItem(
-                                  child: Text('Hindi'),
-                                  value: 'Hindi',
-                                ),
-                                DropdownMenuItem(
-                                  child: Text('Gujarati'),
-                                  value: 'Gujarati',
-                                ),
-                                DropdownMenuItem(
-                                  child: Text('French'),
-                                  value: 'French',
-                                ),
-                                DropdownMenuItem(
-                                  child: Text('Portugal'),
-                                  value: 'Portugal',
-                                ),
-                              ],
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedLanguage = value;
-                                });
-                              },
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                if (selectedLanguage != null) {
-                                  setState(() {
-                                    Language.add(selectedLanguage!);
-                                  });
-                                }
-                              },
-                              child: Container(
-                                height: height*0.046,
-                                width: width*0.1,
-                                decoration: BoxDecoration(
-                                  color: Color(0xff4FB4AC),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(5)),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  size: 30,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            Language(),
+            //TODO - Social
+            Social(),
           ],
         ),
       ),

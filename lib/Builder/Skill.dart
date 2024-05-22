@@ -25,7 +25,7 @@ class _SkillState extends State<Skill> {
                 txtSkillControllerList.length,
                     (index) => ListTile(
                   title: TextField(
-                    controller: txtSkillController,
+                    controller: txtSkillControllerList[index],
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(
                           vertical: height * 0.014,
@@ -65,8 +65,7 @@ class _SkillState extends State<Skill> {
                             TextEditingController txtSkillController =
                             TextEditingController();
                             setState(() {
-                              txtSkillControllerList
-                                  .add(txtSkillController);
+                              txtSkillControllerList.add(txtSkillController);
                             });
                           },
                           child: Icon(

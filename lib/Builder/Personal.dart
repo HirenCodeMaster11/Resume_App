@@ -8,6 +8,8 @@ import '../utils/global.dart';
 import 'resumeBuilder.dart';
 import 'Name and Email.dart';
 
+GlobalKey<FormState> formKey = GlobalKey();
+
 class PersonSreen extends StatefulWidget {
   const PersonSreen({super.key});
 

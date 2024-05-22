@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'Builder/Generate.dart';
 import 'Builder/resumeBuilder.dart';
 import 'SplashScreen/SplashScreen.dart';
 
@@ -22,6 +23,7 @@ class ResumeApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/builder': (context) => const builder(),
+        '/generate' :(context) => Pdf(),
       },
     );
   }

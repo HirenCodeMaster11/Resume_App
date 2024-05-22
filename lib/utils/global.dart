@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 
-String name = '';
-String email = '';
-String mobile = '';
-String loc = '';
-String job = '';
+String? name;
+String? email;
+String? mobile;
+String? loc;
+String? job;
+String? institute;
+String? eduStDate;
+String? eduDate;
+String? eduGrade;
+String? eduDes;
 
 TextEditingController txtSkillController = TextEditingController();
 
@@ -20,7 +25,7 @@ List<TextEditingController> txtLanguageControllerList = [
 
 int index = 0;
 
-String selectedObjective = 'Demo Txt';
+int selectedObjective = 0;
 
 List<String> Objectives = [
   'I am a hard working, honest individual. I am a good timekeeper, always willing to learn new skills. I am friendly, helpful and polite, have a good sense of humour. I am able to work independently in busy environments and also within a team setting.',
@@ -31,25 +36,164 @@ List<String> Objectives = [
 ];
 
 bool adding = true;
-List Language = [
-  // 'Portuguese',
-  // 'English',
-  // 'Gujrati',
-  // 'Hindi',
-  // 'Sanskrit',
-  // 'Bulgarian',
-  // 'French',
-  // 'Albanian	',
-  // 'German',
-  // 'Aymara',
-  // 'Guaraní',
-  // 'Quechua',
-  // 'Spanish'
+
+List languages = [];
+
+List language = [
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
 ];
 
-List addLanguage = [];
-String? selectedLanguage;
-
+List languagenames = [
+  'Afrikaans',
+  'Aghem',
+  'Akan',
+  'Amharic',
+  'Arabic',
+  'Assamese',
+  'Asu',
+  'Asturian',
+  'Azerbaijani',
+  'Basaa',
+  'Belarusian',
+  'Bemba',
+  'Bena',
+  'Bulgarian',
+  'Bambara',
+  'Bangla',
+  'Tibetan',
+  'Breton',
+  'Bodo',
+  'Bosnian',
+  'Catalan',
+  'Chakma',
+  'Chechen',
+  'Cebuano',
+  'Chiga',
+  'Cherokee',
+  'Central Kurdish',
+  'Czech',
+  'Welsh',
+  'Danish',
+  'Taita',
+  'German',
+  'Zarma',
+  'Lower Sorbian',
+  'Duala',
+  'Jola-Fonyi',
+  'Dzongkha',
+  'Embu',
+  'Ewe',
+  'Greek',
+  'English',
+  'Esperanto',
+  'Spanish',
+  'Estonian',
+  'Basque',
+  'Ewondo',
+  'Persian',
+  'Fulah',
+  'Finnish',
+  'Filipino',
+  'Faroese',
+  'French',
+  'Friulian',
+  'Western Frisian',
+  'Irish',
+  'Scottish Gaelic',
+  'Galician',
+  'Swiss German',
+  'Gujarati',
+  'Gusii',
+  'Romanian',
+  'Rombo',
+  'Russian',
+  'Kinyarwanda',
+  'Rwa',
+  'Sakha',
+  'Samburu',
+  'Sangu',
+  'Sindhi',
+  'Northern Sami',
+  'Sena',
+  'Koyraboro Senni',
+  'Sango',
+  'Tachelhit',
+  'Sinhala',
+];
 
 TextEditingController txtName = TextEditingController();
 TextEditingController txtMobile = TextEditingController();
@@ -62,9 +206,9 @@ TextEditingController txtInst = TextEditingController();
 TextEditingController txtGrade = TextEditingController();
 TextEditingController txtStDate = TextEditingController();
 TextEditingController txtEDate = TextEditingController();
+TextEditingController txtEduDes = TextEditingController();
 
-
-TextEditingController txtObjective = TextEditingController();
+TextEditingController txtObjective = TextEditingController(text: '');
 TextEditingController txtLanguage = TextEditingController();
 
 TextEditingController txtCom = TextEditingController();
@@ -81,3 +225,8 @@ TextEditingController txtCourse = TextEditingController();
 TextEditingController txtCerLink = TextEditingController();
 TextEditingController txtCerStDate = TextEditingController();
 TextEditingController txtCerEDate = TextEditingController();
+
+TextEditingController txtInsta = TextEditingController();
+TextEditingController txtTwi = TextEditingController();
+TextEditingController txtGit = TextEditingController();
+TextEditingController txtLinked = TextEditingController();

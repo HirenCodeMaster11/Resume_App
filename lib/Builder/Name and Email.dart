@@ -167,9 +167,6 @@ TextFormField location(double height,TextEditingController? controller) {
       if (value!.isEmpty) {
         return 'This Field Is Must Be Required';
       }
-      if (RegExp(r'[0-9]').hasMatch(value)) {
-        return 'Entre the street num required';
-      }
     },
     controller: controller,
     keyboardType: TextInputType.streetAddress,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../utils/global.dart';
 
@@ -262,6 +263,7 @@ class _EducationScreenState extends State<EducationScreen> {
                             height: height * 0.032,
                           ),
                           TextField(
+                            controller: txtEduDes,
                             keyboardType: TextInputType.multiline,
                             minLines: 1,
                             maxLines: 5,
@@ -299,21 +301,35 @@ class _EducationScreenState extends State<EducationScreen> {
                             mainAxisAlignment:
                             MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                height: height * 0.05,
-                                width: width * 0.442,
-                                decoration: BoxDecoration(
-                                  color: Color(0xff4CB6AC),
-                                  borderRadius:
-                                  BorderRadius.circular(6),
-                                ),
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Save details',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
+                              GestureDetector(
+                                onTap: () {
+                                  institute = txtInst.text;
+                                  eduStDate = txtStDate.text;
+                                  eduDate = txtEDate.text;
+                                  eduGrade = txtGrade.text;
+                                  setState(() {
+                                    if(eduDes!=null)
+                                      {
+                                        eduDes = txtEduDes.text;
+                                      }
+                                  });
+                                },
+                                child: Container(
+                                  height: height * 0.05,
+                                  width: width * 0.442,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xff4CB6AC),
+                                    borderRadius:
+                                    BorderRadius.circular(6),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    'Save details',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500),
+                                  ),
                                 ),
                               ),
                               Container(
