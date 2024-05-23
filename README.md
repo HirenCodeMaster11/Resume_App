@@ -1,5 +1,14 @@
 # Resume_app
 
+<h2 align="center"Resume App Recording </h2>
+
+<h1 align="left"></h1>
+<div align="center">
+ <video src="https://github.com/HirenCodeMaster11/Resume_App/assets/148859956/279b58e0-96c3-489f-8349-18b131d8516c.mp4" type="video/mp4"> 
+</video>
+</div>
+
+
 <h2 align="center">1. Splash Screen </h2>
 
 <h1 align="left"></h1>
