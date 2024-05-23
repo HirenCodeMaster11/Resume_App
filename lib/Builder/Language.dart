@@ -13,6 +13,8 @@ class Language extends StatefulWidget {
 class _LanguageState extends State<Language> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -54,6 +56,27 @@ class _LanguageState extends State<Language> {
           ],
         ),
       ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: height * 0.05,
+            width: width * 0.440,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(6),
+            ),
+            alignment: Alignment.center,
+            child: Text(
+              'Save details',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+        ],
+      )
     );
   }
 }

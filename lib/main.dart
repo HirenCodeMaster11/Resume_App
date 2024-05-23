@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:printing/printing.dart';
+import 'package:resume_app/Builder/Pdf.dart';
 
 import 'Builder/Generate.dart';
 import 'Builder/resumeBuilder.dart';
@@ -24,6 +26,7 @@ class ResumeApp extends StatelessWidget {
         '/': (context) => const SplashScreen(),
         '/builder': (context) => const builder(),
         '/generate' :(context) => Pdf(),
+        '/PdfPreview' : (context) => PdfPreviewpage(),
       },
     );
   }

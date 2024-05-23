@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../utils/global.dart';
 
@@ -259,21 +260,29 @@ class _CertificationState extends State<Certification> {
                               mainAxisAlignment:
                               MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  height: height * 0.05,
-                                  width: width * 0.442,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xff4CB6AC),
-                                    borderRadius:
-                                    BorderRadius.circular(6),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    'Save details',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500),
+                                GestureDetector(
+                                  onTap: () {
+                                    course = txtCourse.text;
+                                    stDate = txtCerStDate.text;
+                                    eDate = txtCerEDate.text;
+                                    cerLink = txtCerLink.text;
+                                  },
+                                  child: Container(
+                                    height: height * 0.05,
+                                    width: width * 0.442,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff4CB6AC),
+                                      borderRadius:
+                                      BorderRadius.circular(6),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      'Save details',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500),
+                                    ),
                                   ),
                                 ),
                                 Container(

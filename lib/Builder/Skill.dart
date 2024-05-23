@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../utils/global.dart';
 
@@ -116,20 +117,30 @@ class _SkillState extends State<Skill> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: height * 0.05,
-                      width: width * 0.440,
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CB6AC),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Save details',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
+                    InkWell(
+                      onTap : (){
+                         skills="";
+                          for(int i=0 ;i<skill.length; i++) {
+                            setState(() {
+                              skills = skills + '\n' + txtSkillControllerList[i].text;
+                            });
+                          }
+                      },
+                      child: Container(
+                        height: height * 0.05,
+                        width: width * 0.440,
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CB6AC),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Save details',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ),
                     Container(

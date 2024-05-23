@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../utils/global.dart';
 
@@ -255,7 +256,8 @@ class _ExperienceState extends State<Experience> {
                             SizedBox(
                               height: height * 0.032,
                             ),
-                            TextField(
+                            TextFormField(
+                              controller: txtComDes,
                               keyboardType: TextInputType.multiline,
                               minLines: 1,
                               maxLines: 5,
@@ -293,21 +295,30 @@ class _ExperienceState extends State<Experience> {
                               mainAxisAlignment:
                               MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  height: height * 0.05,
-                                  width: width * 0.442,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xff4CB6AC),
-                                    borderRadius:
-                                    BorderRadius.circular(6),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    'Save details',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500),
+                                GestureDetector(
+                                  onTap: () {
+                                    comName = txtCom.text;
+                                    comStDate = txtComStDate.text;
+                                    comDate = txtEDate.text;
+                                    role = txtRole.text;
+                                    comDes = txtComDes.text;
+                                  },
+                                  child: Container(
+                                    height: height * 0.05,
+                                    width: width * 0.442,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff4CB6AC),
+                                      borderRadius:
+                                      BorderRadius.circular(6),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      'Save details',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500),
+                                    ),
                                   ),
                                 ),
                                 Container(

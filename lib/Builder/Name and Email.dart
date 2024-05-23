@@ -11,6 +11,7 @@ TextFormField names(double height,TextEditingController? controller) {
     },
 
     controller: controller,
+    textInputAction: TextInputAction.next,
     keyboardType: TextInputType.name,
     cursorColor: Colors.blueAccent,
     decoration: InputDecoration(
